@@ -71,3 +71,16 @@ def fFunc1(n):
     @return: n+1
     """
     return n + 1
+
+def whatever(x):
+    """x as parameter
+    
+    some...
+    
+    Arguments:
+    x: {tyope} -- [description]
+    Returns:
+    x
+    """
+    return x
+
