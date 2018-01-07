@@ -1,4 +1,4 @@
-#keyword argument/named param and stuff
+#func and args and stuffs
 
 def kwArg(x=1, y=2, z=3):
     """key word argument example
@@ -27,10 +27,16 @@ def flex_arg(*args):
         *args {[type]} -- [description]
     """
     print(args)
-    ans = ""
+    ans = 0
     for e in args:
-        ans = ans + str(e)
+        ans = ans + e
     return ans
 
 print(flex_arg(1,2,3,4.4,5.5))
 
+def unpack_arg(x,y,z):
+    return x*y*z
+
+arr1 = [1,2,3]
+
+print(unpack_arg(*arr1))
