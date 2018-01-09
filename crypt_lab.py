@@ -1,6 +1,8 @@
 """Author: Albert Chan
 
-The "I don't know what the f__k I'm doing but pretend that I know because I took a security class" encryption script.
+The "I don't know wtf I'm doing but pretend that I know because I took a security class" encryption script.
+
+Also have a taste in string encoding/decoding in the process.
 
 Required Module: PyNaCl
 """
@@ -15,8 +17,8 @@ import nacl.hash
 KEY = b'123456'
 HASHER = nacl.hash.sha256
 
-KEY_MD = HASHER(KEY, encoder=nacl.encoding.HexEncoder)
-KEY_MD_DECODE = bytes(bytearray.fromhex(KEY_MD.decode("utf-8")))
+KEY_MD = HASHER(KEY, encoder=nacl.encoding.HexEncoder)  # b'abcdef' instead of b'\xab\xcd\xef' like wtf?
+KEY_MD_DECODE = bytes(bytearray.fromhex(KEY_MD.decode("utf-8")))  # convert to actual bytes
 
 print(KEY_MD)
 print(bytearray.fromhex(KEY_MD.decode("utf-8")))
