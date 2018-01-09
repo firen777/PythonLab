@@ -1,2 +1,6 @@
 #VSCode generated folder
 .vscode
+
+
+#python bytecode
+__pycache__/
