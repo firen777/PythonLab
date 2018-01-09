@@ -16,6 +16,11 @@ fw.close()
 '+'	open a disk file for updating (reading and writing)
 'U'	universal newlines mode (deprecated)
 """
+# fr = open('./file_lab.txt', 'r')
+# buff = fr.read()
+# print(buff)
+# fr.close()
+
 
 # fr = open('./file_lab.txt', 'r')
 # buff = fr.readline()
