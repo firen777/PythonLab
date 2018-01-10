@@ -2,7 +2,7 @@
 
 The "I don't know wtf I'm doing but pretend that I know because I took a security class" encryption script.
 
-Also have a taste in string encoding/decoding in the process.
+Also have a taste in string encoding/decoding in Python in the process.
 
 Required Module: PyNaCl
 
@@ -15,7 +15,7 @@ Python3 crypt_lab.py <op> <input_file> <output_file> <key>
 - <op>: 0: encode; 1: decode.
 - <input_file>: file to be read.
 - <output_file>: file to be written to.
-- <key>: secret key.
+- <key>: secret key, arbitrary length.
 """
 
 import sys
@@ -122,17 +122,3 @@ elif sys.argv[1] == '1':
     dec(sys.argv[2],sys.argv[3],sys.argv[4])
 else:
     print('opcode need to be either 0 (encrypt) or 1 (decrypt)')
-
-
-# box = nacl.secret.SecretBox(KEY_MD_DECODE)
-
-# msg = ''
-# with open("./test_plain.txt", 'rb') as fr:
-#     msg = fr.read()
-#     print(msg)
-
-# with open("./test_crypt.txt", 'wb') as fw:
-#     tempstr = b'\x40\x41\x42\x43\x44\x45'
-#     fw.write(tempstr)
-
-
