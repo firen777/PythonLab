@@ -1,8 +1,8 @@
 """
 more module test.
 
-Turns out imported .py file will execute statements...
+2018/1/16: main function added. Imported module will not execute main function
 """
-import crypt_lab as clab #crypt_lab.py will be executed.
+import crypt_lab as clab
 
-print(clab.isBase64(b'aaa'))
+print(clab.isBase64(b'aQ=='))

@@ -108,17 +108,22 @@ def dec(path_in, path_out, key):
     with open(path_out, 'wb') as fw:
         fw.write(decrypted)
 
-############ opcode ##############
-if len(sys.argv) < 5:
-    print("Usage:")
-    print("Python3 crypt_lab.py <op> <input_file> <output_file> <key>")
-    print("<op>: 0: encode; 1: decode.")
-    print("<input_file>: file to be read.")
-    print("<output_file>: file to be written to.")
-    print("<key>: secret key.")
-elif sys.argv[1] == '0':
-    enc(sys.argv[2],sys.argv[3],sys.argv[4])
-elif sys.argv[1] == '1':
-    dec(sys.argv[2],sys.argv[3],sys.argv[4])
-else:
-    print('opcode need to be either 0 (encrypt) or 1 (decrypt)')
+############ main function ##############
+def main(argv):
+    if len(argv) < 5:
+        print("Usage:")
+        print("python crypt_lab.py <op> <input_file> <output_file> <key>")
+        print("<op>: 0: encode; 1: decode.")
+        print("<input_file>: file to be read.")
+        print("<output_file>: file to be written to.")
+        print("<key>: secret key.")
+    elif argv[1] == '0':
+        enc(argv[2],argv[3],argv[4])
+    elif argv[1] == '1':
+        dec(argv[2],argv[3],argv[4])
+    else:
+        print('opcode need to be either 0 (encrypt) or 1 (decrypt)')
+
+
+if __name__ == "__main__":
+    main(sys.argv)
