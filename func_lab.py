@@ -40,3 +40,5 @@ def unpack_arg(x,y,z):
 arr1 = [1,2,3]
 
 print(unpack_arg(*arr1))
+
+#for Lambda demonstration, see scoping_lab.py

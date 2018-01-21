@@ -56,10 +56,10 @@ def lambdaFunc(f):
     Scoping lab with lambda.
     
     Arguments:
-        f {[type]} -- function that accept one param
+    f: {[type]} -- function that accept one param
     
     Returns:
-        [type] -- ()->f(x), where x is defined outside the scope
+    [type] -- ()->f(x), where x is defined outside the scope
     """
     
     return lambda: f(x)
@@ -67,15 +67,17 @@ def lambdaFunc(f):
 
 def fFunc1(n):
     """
-    @param n: number
-    @return: n+1
+    Arguments:
+    n: number
+    Returns: 
+    n+1
     """
     return n + 1
 
 def whatever(x):
     """x as parameter
     
-    some...
+    some... trying out pydoc plugin for VSCode
     
     Arguments:
     x: {tyope} -- [description]
