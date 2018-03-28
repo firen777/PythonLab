@@ -7,7 +7,31 @@ Reviewing Linear Algebra and play with OO in Python in the process.
 import sys
 
 class AC_Matrix:
-    def __init__(self, mat=[[1,0,0],[0,1,0],[0,0,1]]):
+    def __init__(self, *mat):
+        """Constructor of AC_Matrix class
+        
+        Arguments:
+        mat: list of vectors. Notice every list item is a column instead of row. 
+        
+        For example:
+        ```
+        i1 j1 k1
+        i2 j2 k2
+        i3 j3 k3
+        ```
+
+        Should be passed as:
+        ```
+        mat = [i1,i2,i3],[j1,j2,j3],[k1,k2,k3]
+        ```
+
+        """
+        num_count = len(mat[0])
+        
+        for li in mat:
+            if len(li) != num_count:
+                raise ValueError("Invalid Matrix format:\none or more of the vecotrs has different number of dimension")
+        
         self.mat = mat
 
     def __str__(self):
@@ -44,7 +68,10 @@ def main(argv):
     test_func = trans_factory()
     test_func(mat1)
 
-    mat1 = AC_Matrix(mat = [[1,0,0],[0,2.9,300]])
+    try:
+        mat1 = AC_Matrix([1,2,3])
+    except ValueError as e:
+        print(e)
     print(mat1)
 
 
